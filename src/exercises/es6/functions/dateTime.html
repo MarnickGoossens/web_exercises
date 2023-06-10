@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Date - time</title>
+        <style>
+            #result {
+                background-color: #312c29;
+                color: #ffd543;
+                margin: 0.5rem;
+                padding: 1rem;
+            }
+
+            #result div:first-of-type {
+                text-align: center;
+            }
+
+            #result figure {
+                display: flex;
+            }
+
+            #result figure img {
+                height: 50px;
+            }
+
+            [type='range'] {
+                width: calc(100% - 220px);
+                min-width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Date - time</h1>
+            <div class="row" id="result">
+                <div class="col-sm-12 col-md-6">
+                    <img src="" alt="" />
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <h2>Good ....</h2>
+                    <figure>
+                        <img id="h0" src="../../../assets/display/number0.svg" alt="" />
+                        <img id="h1" src="../../../assets/display/number1.svg" alt="" />
+                        <img src="../../../assets/display/colon.svg" alt="" />
+                        <img id="m0" src="../../../assets/display/number2.svg" alt="" />
+                        <img id="m1" src="../../../assets/display/number3.svg" alt="" />
+                        <img src="../../../assets/display/colon.svg" alt="" />
+                        <img id="s0" src="../../../assets/display/number4.svg" alt="" />
+                        <img id="s1" src="../../../assets/display/number5.svg" alt="" />
+                    </figure>
+                    <label for="extra"
+                        >Simulate real time +
+                        <output id="output">0</output>
+                        h</label
+                    >
+                    <input type="range" min="0" max="23" value="0" id="extra" oninput="output.value =  extra.value" />
+                </div>
+            </div>
+            <div class="border-gray">
+                <p>
+                    Show a <b>message and image</b> according to the (simulated) time, i.e. the current time with the selected number of
+                    hours added
+                </p>
+                <ul>
+                    <li>
+                        Between 06:00:00 (included) and 10:00:00<br />
+                        <ul>
+                            <li>Text: <i>Good morning</i><br /></li>
+                            <li>Image <i>/assets/dateTime/morning.png</i></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Between 10:00:00 (included) and 21:00:00<br />
+                        <ul>
+                            <li>Text: <i>Good day</i><br /></li>
+                            <li>Image <i>/assets/dateTime/day.png</i></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Between 21:00:00 (included) and 06:00:00<br />
+                        <ul>
+                            <li>Text: <i>Good night</i><br /></li>
+                            <li>Image <i>/assets/dateTime/night.png</i></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Show the <b>(simulated) time on the display</b> using the images <i>/assets/display/numberX.svg</i></p>
+                <p>
+                    TIP: If your default browser language is English, use
+                    <code>toLocaleTimeString('en-GB')</code> to easily convert the date/time to a HH:MM:SS format. For browsers in Dutch,
+                    <code>toLocaleTimeString()</code> (without arguments) should do the job.
+                </p>
+            </div>
+            <hr />
+            <pre data-src="dateTime.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="dateTime.js"></script>
+    </body>
+</html>
